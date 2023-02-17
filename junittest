@@ -1,0 +1,19 @@
+	@Test
+	public void testCounte() {
+	   
+	    HashMap<String,Integer> expected= new HashMap<>();
+	    expected.put("this", 1);
+	    expected.put("problem", 1);
+	    expected.put("is", 1);
+	    expected.put("not", 1);
+	    expected.put("so", 1);
+	    expected.put("hard", 2);
+	    expected.put("few",1);
+	    expected.put("problems", 1);
+	    expected.put("are", 1);
+	    
+	    HashMap<String,Integer> actual=new HashMap<>();
+	    actual = (HashMap<String, Integer>) service.checkCount("This problem funny.");
+	    assertEquals(expected,actual);
+	}
+}
