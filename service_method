@@ -1,0 +1,35 @@
+package com.apigateway;
+import java.util.*;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class SampleStringService {
+	
+	
+	public Map<String,Integer> checkCount(String sample)
+	{
+		
+		Map<String,Integer> frequency = new HashMap<>();
+		
+		List<String> newArray = new ArrayList<>();
+		
+		sample = sample.replace(".","");
+		
+		String[] inputStr = sample.split("\\s");
+		
+		for(String input : inputStr) {
+			String lCase = input.toLowerCase();
+			if(frequency.containsKey(lCase)) {
+				Integer count = frequency.get(lCase);
+				frequency.put(lCase, count+1);
+			}
+			else {
+				frequency.put(input.toLowerCase(),1);
+			}
+				//System.out.println(frequency.toString());
+			
+		}
+		return frequency;
+	}
+}
